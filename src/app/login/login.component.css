@@ -1,0 +1,143 @@
+.container {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  background: #eee;
+}
+
+.right-side {
+  overflow: hidden;
+  border-top-right-radius: 3rem;
+  border-bottom-right-radius: 3rem;
+
+  width: 30%;
+  height: 52.5%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: url("http://safe-email.eu/dashboard/assets/img/backgrounds/1.jpg")
+    no-repeat center/cover;
+}
+.registered {
+  position: absolute;
+  width: 50%;
+  top: 5%;
+  left: 0;
+  width: 100%;
+  animation: slide 5s linear 1;
+  animation-delay: 3s;
+}
+
+.registered-text {
+  padding: 1rem 2rem;
+  width: 50%;
+  text-align: center;
+  margin: auto;
+  background-color: #d3ffd9;
+  color: #00ff22;
+  border-radius: 20px;
+  font-family: monospace;
+}
+
+.form-container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 2rem 3rem;
+  background-color: white;
+  width: 30%;
+  border-top-left-radius: 3rem;
+  border-bottom-left-radius: 3rem;
+}
+
+.inputs-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.inputs-container > input {
+  border: none;
+  /* border-bottom-width: 1px;
+  border-bottom-color: linear-gradient(90deg, #48c6ef 0%, #6f86d6 100%);
+  border-bottom-style: solid; */
+  background: linear-gradient(90deg, #48c6ef 0%, #6f86d6 100%);
+  outline: none;
+  padding: 0.5rem 1.2rem;
+  border-radius: 0.2rem;
+  transition: all 0.5s ease-in-out;
+}
+
+.inputs-container > input::placeholder {
+  color: #fff;
+  font-size: 1em;
+  font-family: monospace;
+}
+
+.inputs-container > input:focus {
+  background: transparent;
+  border-bottom: 1px solid #48c6ef;
+}
+
+.inputs-container > p {
+  font-size: 0.8rem;
+  color: rgb(255, 0, 0);
+  background: #ff8585;
+  padding: 0.5rem 1rem;
+  text-align: center;
+  font-family: monospace;
+}
+
+button {
+  padding: 0.6rem;
+  background: transparent;
+  border: 1px solid #bebdbd;
+  border-radius: 1.2rem;
+  cursor: pointer;
+  transition: all 0.5s ease-in-out;
+}
+
+button:hover {
+  background: #6f86d6;
+  color: white;
+}
+
+.link {
+  font-size: 1rem;
+  color: #6f86d6;
+  text-decoration: none;
+  transition: all 0.5s ease-in-out;
+  font-family: monospace;
+}
+
+.link:hover {
+  color: #48c6ef;
+}
+
+@keyframes slide {
+  0% {
+    top: 0;
+  }
+  20% {
+    top: -20%;
+  }
+  40% {
+    top: -40%;
+  }
+  60% {
+    top: -60%;
+  }
+  80% {
+    top: -80%;
+  }
+  100% {
+    top: -100%;
+    overflow: hidden;
+    visibility: hidden;
+  }
+}

@@ -1,0 +1,22 @@
+
+<div class="container">
+
+  <div class="registered" *ngIf="isSignedUp">
+    <h2 class="registered-text" >Registered Successfully</h2>
+
+</div>
+
+<form (ngSubmit)="onSubmit($event)" class="form-container">
+
+  <div class="inputs-container">
+    <input type="text" name="username" placeholder="Username" [(ngModel)]="form.username" required>
+    <input type="password" name="password" placeholder="Password" [(ngModel)]="form.password" required>
+    <p *ngIf="isLoginFailed">{{errorMessage}}</p>
+  </div>
+  <button type="submit">Login</button>
+  <p class="paragraph">Don't have an account? <a [routerLink]="['/register']" class="link">Signup</a></p>
+</form>
+  <div class="right-side">
+
+  </div>
+</div>
