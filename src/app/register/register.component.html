@@ -1,20 +1,5 @@
-
-<div class="container">
-
-
-
-<form (ngSubmit)="onSubmit($event)" class="form-container">
-
-  <div class="inputs-container">
-    <input type="text" name="username" placeholder="Username" [(ngModel)]="form.username" required>
-    <input type="email" name="email" placeholder="Email" [(ngModel)]="form.email" required>
-    <input type="password" name="password" placeholder="Password" [(ngModel)]="form.password" required>
-    <p *ngIf="isSignUpFailed">{{errorMessage}}</p>
-  </div>
-  <button type="submit">Register</button>
-  <p class="paragraph">Don't have an account? <a [routerLink]="['/login']" class="link">Sign in</a></p>
-</form>
-  <div class="right-side">
-
-  </div>
-</div>
+<app-form
+  (submit_event)="onSubmit($event)"
+  [header]="header"
+  [errorMessage]="errorMessage"
+></app-form>

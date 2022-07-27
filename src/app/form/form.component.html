@@ -1,0 +1,54 @@
+<div class="form-container">
+  <form [formGroup]="myForm" class="form">
+    <p-card header="{{ header }}">
+      <div class="field">
+        <label for="username">Username</label>
+        <input
+          formControlName="username"
+          id="username"
+          type="text"
+          required
+          pInputText
+        />
+        <small
+          *ngIf="
+            myForm.get('username').invalid &&
+            (myForm.get('username').dirty || myForm.get('username').touched)
+          "
+          class="p-error"
+          >{{ errorMessage || "Username is required" }}
+        </small>
+      </div>
+      <div class="field">
+        <label for="password">Password</label>
+        <input
+          formControlName="password"
+          id="password"
+          type="password"
+          required
+          pInputText
+        />
+        <small
+          *ngIf="
+            myForm.get('password').invalid &&
+            (myForm.get('password').dirty || myForm.get('password').touched)
+          "
+          class="p-error"
+          >{{ errorMessage || "Password is required" }}</small
+        >
+      </div>
+      <ng-template pTemplate="footer">
+        <div class="controls">
+          <button
+            pButton
+            type="button"
+            label="Register"
+            class="p-button-outlined"
+            [disabled]="myForm.invalid"
+            (click)="onSubmit()"
+          ></button>
+        </div>
+      </ng-template>
+    </p-card>
+  </form>
+</div>
